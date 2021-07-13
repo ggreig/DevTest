@@ -23,13 +23,27 @@ describe('AppComponent', () => {
   it(`should have as title 'ui'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('ui');
+    expect(app.title).toEqual('ServiceSight');
   });
 
-  it('should render title', () => {
+  it('should display home menu first', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('ui app is running!');
+    expect(compiled.querySelector('nav > a:first-child').textContent).toContain('home');
+  });
+
+  it('should display customer menu second', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('nav > a:first-child + a').textContent).toContain('customers');
+  });
+
+  it('should display jobs menu third', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('nav > a:first-child + a + a').textContent).toContain('jobs');
   });
 });

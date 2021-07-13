@@ -1,4 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing'
 
 import { JobDetailComponent } from './job-detail.component';
 
@@ -8,6 +10,7 @@ describe('JobDetailComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [ RouterTestingModule, HttpClientTestingModule ],
       declarations: [ JobDetailComponent ]
     })
     .compileComponents();
@@ -16,6 +19,7 @@ describe('JobDetailComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(JobDetailComponent);
     component = fixture.componentInstance;
+    component.job = { jobId: 1, engineer: "Scotty", when: new Date(2021, 7, 13) };
     fixture.detectChanges();
   });
 
