@@ -1,4 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing'
+
+import { FormsModule } from '@angular/forms';
 
 import { JobComponent } from './job.component';
 
@@ -8,6 +12,7 @@ describe('JobComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [ FormsModule, RouterTestingModule, HttpClientTestingModule ],
       declarations: [ JobComponent ]
     })
     .compileComponents();
