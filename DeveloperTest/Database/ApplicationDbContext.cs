@@ -46,6 +46,11 @@ namespace DeveloperTest.Database
                 .HasKey(x => x.JobId);
 
             modelBuilder.Entity<Job>()
+                .HasOne(x => x.Customer)
+                .WithMany(x => x.Jobs)
+                .IsRequired(false);
+
+            modelBuilder.Entity<Job>()
                 .Property(x => x.JobId)
                 .ValueGeneratedOnAdd();
 
@@ -53,6 +58,7 @@ namespace DeveloperTest.Database
                 .HasData(new Job
                 {
                     JobId = 1,
+                    CustomerId = 1,
                     Engineer = "Test",
                     When = DateTime.Now
                 });

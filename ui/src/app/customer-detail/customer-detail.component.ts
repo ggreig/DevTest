@@ -12,7 +12,7 @@ export class CustomerDetailComponent implements OnInit {
 
   private customerId: number;
 
-  public customer: CustomerModel;
+  public customer: CustomerModel | undefined;
 
   constructor(
     private route: ActivatedRoute,

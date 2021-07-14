@@ -19,7 +19,7 @@ describe('JobDetailComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(JobDetailComponent);
     component = fixture.componentInstance;
-    component.job = { jobId: 1, engineer: "Scotty", when: new Date(2021, 7, 13) };
+    component.job = { jobId: 1, customerId: 1, engineer: "Scotty", when: new Date(2021, 7, 13) };
     fixture.detectChanges();
   });
 

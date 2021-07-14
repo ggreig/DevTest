@@ -12,17 +12,6 @@
   </select>
   <small *ngIf="type.invalid">Please select a type</small>
 
-   <!--
-       <label for="engineer">Engineer</label>
-  <select name="engineer" required #engineer="ngModel" ngModel placeholder="Please select" [(ngModel)]="newJob.engineer">
-    <option [ngValue]="undefined" selected>Please select</option>
-    <option *ngFor="let engineer of engineers">{{engineer}}</option>
-  </select>
-  <small *ngIf="engineer.invalid">Please select an engineer</small>
-  <label for="when">When</label>
-  <input type="date" name="when" ngModel required #when="ngModel" [(ngModel)]="newJob.when" />
-  <small *ngIf="when.invalid">Please select a valid date</small>
-  -->
   <button type="submit" [disabled]="customerForm.invalid">Add Customer</button>
 </form>
 
