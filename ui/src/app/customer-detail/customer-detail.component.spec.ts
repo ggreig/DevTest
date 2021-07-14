@@ -26,4 +26,31 @@ describe('CustomerDetailComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should render expected Customer ID', () => {
+    const fixture = TestBed.createComponent(CustomerDetailComponent);
+    component = fixture.componentInstance;
+    component.customer = { customerId: 1, name: "Scotty", type: "Large"};
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector("[id='customerId']").textContent).toContain('1');
+  });
+
+  it('should render expected Customer Name', () => {
+    const fixture = TestBed.createComponent(CustomerDetailComponent);
+    component = fixture.componentInstance;
+    component.customer = { customerId: 1, name: "Scotty", type: "Large"};
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector("[id='customerName']").textContent).toContain('Scotty');
+  });
+  
+  it('should render expected Customer Type', () => {
+    const fixture = TestBed.createComponent(CustomerDetailComponent);
+    component = fixture.componentInstance;
+    component.customer = { customerId: 1, name: "Scotty", type: "Large"};
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector("[id='customerType']").textContent).toContain('Large');
+  });
 });

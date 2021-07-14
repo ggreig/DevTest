@@ -10,7 +10,7 @@ import { CustomerModel } from '../models/customer.model';
   styleUrls: ['./customer.component.scss']
 })
 export class CustomerComponent implements OnInit {
-  
+
   public customers: CustomerModel[] = [];
 
   public customerTypes: string[] = [];
